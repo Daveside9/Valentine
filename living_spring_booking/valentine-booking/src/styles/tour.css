@@ -1,0 +1,94 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #390ff500; /* Default background color for all pages */
+  color: #370ab4; /* Dark text for readability */
+}
+
+/* Tour Page Container (with Background Image) */
+.tour-container {
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-image: url('https://cdn.pixabay.com/photo/2023/12/08/19/51/ai-generated-8438037_1280.jpg'); /* Tour page background */
+  background-size: cover; /* Ensure the image covers the full background */
+  background-position: center; /* Center the background image */
+  background-attachment: fixed; /* Keep the background fixed when scrolling */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: #fff; /* White text color for contrast against dark background */
+}
+
+/* Page Title */
+.tour-container h1 {
+  text-align: center;
+  color: #e74c3c; /* Valentine's Day red */
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+/* Subsection Titles */
+.tour-content h2 {
+  font-size: 2rem;
+  color: #e74c3c; /* Red for section headings */
+  margin-top: 30px;
+  text-align: center;
+}
+
+/* Paragraph Styles */
+.tour-content p {
+  font-size: 1rem; /* Fixed the font-size */
+  line-height: 1.8;
+  margin: 15px 0;
+  color: #fff; /* White text color */
+  text-align: left;
+}
+
+/* Flexbox Layout for Tour Images */
+.tour-content {
+  display: flex;
+  flex-wrap: wrap; /* Allow the items to wrap on small screens */
+  justify-content: space-between; /* Distribute images evenly */
+  gap: 20px; /* Space between images */
+  padding: 20px;
+}
+
+/* Image Styling */
+.tour-image {
+  width: 45%; /* Each image will take up 45% of the width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Rounded corners for images */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: block; /* Center the images */
+  margin: 20px 0; /* Space around the images */
+}
+
+/* Tour Content Styling */
+.tour-content {
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent dark background for content */
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .tour-container {
+    padding: 15px;
+  }
+
+  .tour-container h1 {
+    font-size: 2rem; /* Smaller font size for mobile */
+  }
+
+  .tour-content h2 {
+    font-size: 1.5rem; /* Smaller section titles */
+  }
+
+  .tour-image {
+    width: 100%; /* Ensure images take up the full width on small devices */
+    margin-bottom: 15px; /* Add space between images */
+  }
+}
