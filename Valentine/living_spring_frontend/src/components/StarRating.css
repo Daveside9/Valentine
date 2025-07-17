@@ -1,0 +1,32 @@
+/* Star Rating Component */
+.star-rating-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 2rem;
+  position: fixed; /* Fixed position to always stay at the bottom-right */
+  bottom: 20px; /* Distance from the bottom */
+  right: 20px; /* Distance from the right */
+  z-index: 100; /* Make sure it appears above other elements */
+}
+
+.star {
+  cursor: pointer;
+  color: #d3d3d3; /* Light gray color for empty stars */
+  transition: color 0.2s ease-in-out;
+}
+
+.star.filled {
+  color: #ff0000; /* Gold color for filled stars */
+}
+
+.star:hover {
+  color: #ffb400; /* Slightly brighter gold on hover */
+}
+
+p {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #333;
+}

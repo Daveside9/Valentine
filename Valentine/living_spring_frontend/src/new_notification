@@ -1,0 +1,15 @@
+import { useEffect } from 'react';
+import { io } from 'socket.io-client';
+
+const socket = io("http://localhost:5000");
+
+function NotificationListener() {
+  useEffect(() => {
+    socket.on("new_notification", (data) => {
+      alert(data.message); // Or show in your UI
+    });
+  }, []);
+
+  return null;
+}
+export default NotificationListener;
