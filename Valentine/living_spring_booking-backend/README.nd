@@ -1,0 +1,114 @@
+Valentine's Day Picnic Booking
+
+A web-based reservation system that allows users to book picnic or dinner experiences for couples without requiring login or signup. The project consists of a React frontend and a Flask backend with a database for managing reservations.
+
+Features
+
+🎟️ Book Reservations: Users can book a picnic or dinner event.
+
+🏕️ Tour Section: Users can preview available packages.
+
+🖥️ Admin Panel: View and manage reservations.
+
+🛠️ React Frontend: Interactive user interface.
+
+🔥 Flask Backend: Handles reservation requests and database management.
+
+📌 Technologies Used
+
+Frontend:
+
+React.js
+
+React Router
+
+CSS (for styling)
+
+Backend:
+
+Flask (Python)
+
+Flask-SQLAlchemy (Database management)
+
+Flask-Admin (Admin panel)
+
+SQLite (Database)
+
+🚀 Setup & Installation
+
+Prerequisites
+
+Ensure you have Python (3.x) and Node.js installed on your system.
+
+1️⃣ Clone the repository
+
+ git clone https://github.com/your-repo/valentine-booking.git
+ cd valentine-booking
+
+2️⃣ Backend Setup (Flask)
+
+ cd backend  # Navigate to the backend folder
+ python -m venv venv  # Create a virtual environment
+ source venv/bin/activate  # (Mac/Linux) Activate virtual environment
+ venv\Scripts\activate  # (Windows) Activate virtual environment
+ pip install -r requirements.txt  # Install dependencies
+ python app.py  # Start Flask server
+
+The Flask backend will run on http://127.0.0.1:5000
+
+3️⃣ Frontend Setup (React)
+
+ cd frontend  # Navigate to the frontend folder
+ npm install  # Install dependencies
+ npm start  # Start React app
+
+The React frontend will run on http://localhost:3000
+
+📌 API Endpoints
+
+1️⃣ Create a Reservation
+
+POST /api/reserve
+
+{
+  "name": "John Doe",
+  "whatsapp_contact": "+2348012345678",
+  "kaduna_location": "Kaduna Central",
+  "reservationType": "Couples Night"
+}
+
+2️⃣ Get All Reservations
+
+GET /api/reservations
+
+3️⃣ Delete a Reservation
+
+DELETE /api/delete_reservation/<reservation_id>
+
+🔥 Running Admin Panel
+
+To access the admin panel, navigate to:
+
+http://127.0.0.1:5000/reservations
+
+Here, you can view and manage all reservations.
+
+📌 Troubleshooting
+
+If you encounter ModuleNotFoundError: No module named 'flask_admin', install Flask-Admin:
+
+pip install flask-admin
+
+For any errors related to missing dependencies, run:
+
+pip install -r requirements.txt
+
+🎉 Contributions
+
+Feel free to fork this project and submit a pull request if you want to improve it!
+
+🔗 License
+
+This project is open-source and available under the MIT License.
+
+Made with ❤️ for Valentine's Day!

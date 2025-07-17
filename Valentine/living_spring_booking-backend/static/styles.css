@@ -1,0 +1,46 @@
+/* Navbar styles */
+.navbar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px 20px;
+}
+
+.reservation-btn, .home-btn {
+    background-color: #e60073;
+    color: rgb(7, 5, 5);
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+
+.reservation-btn:hover, .home-btn:hover {
+    background-color: #cc0052;
+    color: rgb(247, 14, 14);
+}
+
+/* Main body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://marketplace.canva.com/EAFZUm9T_kg/1/0/1422w/canva-v5exCbGktjg.mp4');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #ec1c1c;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 80px auto; /* Adjusted to prevent overlap with the navbar */
+    background: rgba(199, 198, 198, 0.034); /* Slightly transparent white box */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
