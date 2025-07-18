@@ -1,10 +1,8 @@
-# admin.py
-from flask_admin import AdminIndexView, expose
-from flask_admin.base import BaseView
 from flask_admin.contrib.sqla import ModelView
+from flask_admin.base import BaseView
+from flask_admin import expose, AdminIndexView
 from flask_login import current_user
 from flask import request, redirect, url_for, flash
-
 from models import Reservation, User, UserMessage
 
 
@@ -52,7 +50,7 @@ class SendMessageHTMLView(BaseView):  # ✅ Renamed to avoid conflicts
     @expose('/', methods=['GET', 'POST'])
     def index(self):
         if not current_user.is_authenticated:
-            return redirect(url_for('login'))
+            return redirect(url_for('login_api'))
 
         from app import db, socketio  # 🔁 Break circular import
 
