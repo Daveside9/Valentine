@@ -126,17 +126,29 @@ def logout_route():
 
 # ---------------- Reservation API ----------------
 @app.route('/api/reserve', methods=['POST'])
+@cross_origin(origins="http://localhost:3000", supports_credentials=True)
 def reserve():
     data = request.get_json()
-    new_res = Reservation(
-        name=data['name'],
-        whatsapp_contact=data['whatsapp_contact'],
-        kaduna_location=data['kaduna_location'],
-        reservationType=data['reservationType']
-    )
-    db.session.add(new_res)
-    db.session.commit()
-    return jsonify({"message": "Reservation successful"}), 201
+    if not data:
+        return jsonify({"message": "Invalid JSON"}), 400
+
+    try:
+        new_res = Reservation(
+            name=data.get('name'),
+            whatsapp_contact=data.get('whatsapp_contact'),
+            kaduna_location=data.get('kaduna_location'),
+            reservationType=data.get('reservationType'),
+            date=data.get('date') or None,
+            reference=str(uuid.uuid4())[:8]  # generate a short unique reference
+        )
+        db.session.add(new_res)
+        db.session.commit()
+        return jsonify({"message": "Reservation successful", "reference": new_res.reference}), 201
+    except Exception as e:
+        db.session.rollback()
+        app.logger.error(f"Reservation error: {e}")
+        return jsonify({"message": "Reservation failed", "error": str(e)}), 500
+
 
 # ---------------- Global Message ----------------
 @app.route('/api/global-message', methods=['GET'])
